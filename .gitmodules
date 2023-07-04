@@ -1,0 +1,3 @@
+[submodule "learn-TF-on-EKS"]
+	path = learn-TF-on-EKS
+	url = https://github.com/Klyde-Moradeyo/learn-TF-on-EKS.git
