@@ -16,8 +16,7 @@ jobs:
 
       - name: Set and Mask Environment Variable
         run: |
-            ACCESS_TOKEN="token_secret"
-            echo "::add-mask::$ACCESS_TOKEN" 
+            ACCESS_TOKEN="::add-mask::token_secret" 
             echo "ACCESS_TOKEN=$ACCESS_TOKEN" >> $GITHUB_ENV
 
       - name: Use masked environment variable
