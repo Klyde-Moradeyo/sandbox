@@ -1,0 +1,24 @@
+name: Mask Environment Variable
+
+on:
+  push:
+    branches:
+      - main
+      - github-action-test
+
+jobs:
+  mask-env-var:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set and Mask Environment Variable
+        run: |
+            echo "::add-mask::$(echo 'ACCESS_TOKEN')" 
+            echo "ACCESS_TOKEN=$ACCESS_TOKEN" >> $GITHUB_ENV
+
+      - name: Use masked environment variable
+        run: | 
+          echo "${{ env.ACCESS_TOKEN }}"
