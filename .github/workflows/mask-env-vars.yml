@@ -17,7 +17,7 @@ jobs:
       - name: Set and Mask Environment Variable
         run: |
             echo "This is a test" > test.txt
-            ACCESS_TOKENS=$(cat test.txt)
+            ACCESS_TOKEN=$(cat test.txt)
             echo "ACCESS_TOKEN=$ACCESS_TOKEN" >> $GITHUB_ENV
             echo "::add-mask::$ACCESS_TOKEN"
 
